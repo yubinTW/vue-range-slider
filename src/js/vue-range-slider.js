@@ -966,6 +966,12 @@ export default {
     getIndexByValue(value) {
       return Math.round((value - this.minimum) * this.multiple) / (this.spacing * this.multiple)
     },
+    getIndex() {
+      return this.currentIndex
+    },
+    getValue() {
+      return this.data[this.currentIndex]
+    },
     formatting(value) {
       return typeof this.formatter === 'string' ? this.formatter.replace(/{value}/, value) : this.formatter(value)
     },
